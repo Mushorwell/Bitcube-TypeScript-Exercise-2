@@ -17,46 +17,74 @@
 
 <div class="form-horizontal" id="nameform">
     <div class="form-group">
-        <label for="playername" class="col-sm-2 control-label">Player Name</label>
+        <label for="forename" class="col-sm-2 control-label">Forenames</label>
         <div class="col-sm-2">
-            <input type="text" class="form-control" id="playername" size="20" placeholder="Player Name" />
+            <input type="text" class="form-control" id="forename" size="20" placeholder="Forenames" />
         </div>
     </div>
 
     <div class="form-group">
-        <label for="factor" class="col-sm-2 control-label">Factor</label>
+        <label for="surname" class="col-sm-2 control-label">Surname</label>
         <div class="col-sm-2">
-            <input type="text" class="form-control" id="factor" size="20" value="5" placeholder="Factor" />
+            <input type="text" class="form-control" id="surname" size="20" placeholder="Surname" />
         </div>
     </div>
 
     <div class="form-group">
-        <label for="problemCount" class="col-sm-2 control-label">Number of Problems</label>
+        <label for="nickname" class="col-sm-2 control-label">Nickname</label>
         <div class="col-sm-2">
-            <input type="text" class="form-control" id="problemCount" size="20" placeholder="Number of Problems" />
+            <input type="text" class="form-control" id="nickname" size="20" placeholder="Nick Name" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="email" class="col-sm-2 control-label">Email Address</label>
+        <div class="col-sm-2">
+            <input type="text" class="form-control" id="email" size="50" placeholder="Email Address" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="password" class="col-sm-2 control-label">Password</label>
+        <div class="col-sm-2">
+            <input type="password" class="form-control" id="password" size="20" placeholder="Password" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="confirm_password" class="col-sm-2 control-label">Confirm Password</label>
+        <div class="col-sm-2">
+            <input type="password" class="form-control" id="confirm_password" size="20" placeholder="Confirm Password" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="conditions_agreed" class="col-sm-2 control-label">Agree to the Terms and Conditions</label>
+        <div class="col-sm-2">
+            <input type="checkbox" class="form-control" id="conditions_agreed"  onclick="terms_changed(this)"/>
         </div>
     </div>
 
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-            <button class="btn btn-primary" id="startGame">Start Game</button>
-            <button class="btn btn-success" id="calculate" disabled>Calculate Score</button>
+            <button class="btn btn-primary" id="register" disabled>Register</button>
         </div>
     </div>
-</div>
-
-<div class="form-horizontal" id="game"></div>
-
-<div class="col-sm-offset-2 col-sm-10" id="scores">
-    <h2>Scoreboard</h2>
-    <h4>No scores yet</h4>
 </div>
 
 <div class="col-sm-offset-2 col-sm-10" id="messages"></div>
 
 <!-- add script tags here -->
-<script src="bundle.js"></script>
-
+<script src='bundle.js'></script>
+<script>
+    function terms_changed(termsCheckBox){
+        if(termsCheckBox.checked){
+            document.getElementById("register").disabled = false;
+        } else{
+            document.getElementById("register").disabled = true;
+        }
+    }
+</script>
 
 </body>
 </html>
